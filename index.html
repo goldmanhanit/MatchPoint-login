@@ -1,25 +1,151 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f4f6f9;
-    }
-    img {
-      max-width: 100%;
-      max-height: 100vh;
-      object-fit: contain;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MatchPoint</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --dark:#1e3040;
+  --teal:#3a8fa4;
+  --cyan:#5dd4ec;
+  --bg:#f4f6f9;
+  --text:#1a2e3e;
+  --muted:#5a7a8a;
+  --border:#c4d9e3;
+}
+
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+
+.card{
+  background:var(--dark);
+  border-radius:16px;
+  max-width:420px;
+  width:100%;
+  padding:40px 36px;
+  text-align:center;
+  box-shadow:0 4px 24px rgba(0,0,0,0.1);
+  position:relative;
+  overflow:hidden;
+}
+
+.card::before{
+  content:'';position:absolute;
+  top:-40%;left:50%;transform:translateX(-50%);
+  width:400px;height:400px;
+  background:radial-gradient(circle,rgba(58,143,164,0.18) 0%,transparent 65%);
+  pointer-events:none;
+}
+
+.logo{
+  width:64px;height:64px;
+  background:var(--teal);
+  border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 20px;
+  position:relative;z-index:1;
+}
+
+.logo svg{width:38px;height:38px}
+
+.wordmark{
+  font-family:'Fraunces',serif;
+  font-size:26px;font-weight:700;
+  letter-spacing:-0.02em;
+  margin-bottom:6px;
+  position:relative;z-index:1;
+}
+.wordmark span:first-child{color:white}
+.wordmark span:last-child{color:var(--cyan)}
+
+.tagline{
+  font-size:12px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;
+  color:var(--cyan);
+  margin-bottom:24px;
+  position:relative;z-index:1;
+}
+
+.divider{
+  height:1px;
+  background:rgba(255,255,255,0.1);
+  margin:0 0 24px;
+  position:relative;z-index:1;
+}
+
+.desc{
+  font-size:14px;line-height:1.7;
+  color:rgba(255,255,255,0.6);
+  margin-bottom:28px;
+  position:relative;z-index:1;
+}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;padding:13px;
+  background:var(--teal);color:white;
+  border:none;border-radius:12px;
+  font-family:'DM Sans',sans-serif;
+  font-size:15px;font-weight:600;
+  text-decoration:none;
+  transition:background 0.2s ease;
+  position:relative;z-index:1;
+}
+.btn:hover{background:var(--cyan);color:var(--dark)}
+.btn svg{width:16px;height:16px;flex-shrink:0}
+
+.footer-text{
+  margin-top:18px;
+  font-size:11px;color:rgba(255,255,255,0.35);
+  position:relative;z-index:1;
+}
+</style>
 </head>
 <body>
-  <img src="MatchPoint.png" alt="MatchPoint Recruitment Management System">
+
+<div class="card">
+  <div class="logo">
+    <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="11" cy="11" r="10" stroke="white" stroke-width="1.6" fill="none" opacity="0.5"/>
+      <circle cx="11" cy="11" r="6.5" stroke="white" stroke-width="1.6" fill="none" opacity="0.75"/>
+      <circle cx="11" cy="11" r="3" fill="white" opacity="0.9"/>
+      <line x1="5" y1="11" x2="8" y2="11" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="14" y1="11" x2="17" y2="11" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <div class="wordmark"><span>Match</span><span>Point</span></div>
+  <div class="tagline">Outsourcing &amp; Recruitment</div>
+
+  <div class="divider"></div>
+
+  <p class="desc">
+    MatchPoint connects skilled professionals with leading companies through our outsourcing network.
+    Manage open roles, track candidates, and review applications in one place.
+  </p>
+
+  <a class="btn" href="https://matchpoint-hg.netlify.app/" target="_blank" rel="noopener">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="2" y1="8" x2="14" y2="8"/><polyline points="9 3 14 8 9 13"/>
+    </svg>
+    Open Careers Portal
+  </a>
+
+  <p class="footer-text">Committed to the Perfect Match</p>
+</div>
+
 </body>
 </html>
